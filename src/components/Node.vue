@@ -36,15 +36,6 @@ export default {
   props: [
     'info'
   ],
-  data () {
-    return {
-      initials: ''
-    }
-  },
-  mounted (){
-    let initials = this.info.full_name.match(/\b\w/g) || [];
-    this.initials = ((initials.shift() || '') + (initials.pop() || '')).toUpperCase();
-  },
   methods: {
     renderChildren: function (username, option) {
       this.$emit('renderParent', username, option)
